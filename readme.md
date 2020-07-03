@@ -1,5 +1,6 @@
 ## Steps To Run
-1) Create Database : "rvtest"
-2) Migrate
-3) Seed
+1) Run Composer
+2) Create Database : "rvtest"
+3) Migrate
+4) Seed
 
