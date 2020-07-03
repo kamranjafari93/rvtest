@@ -39,4 +39,26 @@ class WalletController extends Controller
         }
 
     }
+
+    public function balance(Request $rq){
+        //validation
+        $validator = Validator::make(['user_id'=>$rq->user_id], [
+            'user_id' => 'required|min:1',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(false, 400);
+        }
+
+        //Finding User's Wallet
+        $wallet = Wallet::where('user_id',$rq->user_id)->first();
+
+
+        if($wallet){
+            return response()->json(array('balance' => $wallet->balance), 200);
+        }
+        else{
+            return response()->json(false, 404);
+        }
+
+    }
 }

@@ -13,5 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-//Update User's Wallet Balance
+//Add Money to User's Wallet
 Route::put('wallets/{user_id}/add-money/{amount}', 'WalletController@addMoney');
+//Get User' Wallet Balance
+Route::get('wallets/{user_id}/balance', 'WalletController@balance');
