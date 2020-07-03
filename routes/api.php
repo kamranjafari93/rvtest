@@ -13,8 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::put('wallets/{user_id}/', function() {
-    // If the Content-Type and Accept headers are set to 'application/json',
-    // this will return a JSON structure. This will be cleaned up later.
-    return Article::all();
-});
+//Update User's Wallet Balance
+Route::put('wallets/{user_id}/add-money/{amount}', 'WalletController@addMoney');
